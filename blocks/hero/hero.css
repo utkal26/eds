@@ -1,37 +1,79 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
-}
+/* =========================
+   HERO BLOCK (FULL WIDTH FIX)
+========================= */
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  width: 100vw;
+  height: 90vh;
+
+  margin-left: calc(50% - 50vw); /* break out of container */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
+/* =========================
+   BACKGROUND
+========================= */
 
-.hero picture {
+.hero-bg {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: -2;
 }
 
-.hero img {
-  object-fit: cover;
+.hero-bg img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* background: rgba(11, 15, 25, 0.65); */
+  z-index: -1;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.hero-content {
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+/* BIG TEXT */
+.hero-title {
+  font-size: clamp(40px, 8vw, 100px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+/* SMALL TEXT */
+.hero-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.6;
 }
