@@ -71,4 +71,51 @@ export default async function decorate(block) {
 
   // Scroll behavior
   handleScroll(wrapper);
+
+  // ===== MOBILE MENU =====
+
+// Create hamburger
+const hamburger = document.createElement('div');
+hamburger.className = 'nav-hamburger';
+hamburger.innerHTML = `
+  <span></span>
+  <span></span>
+  <span></span>
+`;
+
+// Create mobile menu
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'nav-mobile';
+
+// ✅ Close button
+const closeBtn = document.createElement('div');
+closeBtn.className = 'nav-close';
+closeBtn.innerHTML = '✕';
+
+// Clone nav links
+const mobileLinks = nav.querySelector('.nav-sections').cloneNode(true);
+
+// Append
+mobileMenu.append(closeBtn, mobileLinks);
+
+// Toggle open
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+});
+
+// Close button click
+closeBtn.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+});
+
+// Close on link click
+mobileMenu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Append
+wrapper.append(hamburger);
+document.body.append(mobileMenu);
 }

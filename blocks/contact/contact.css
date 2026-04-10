@@ -1,0 +1,60 @@
+/* =========================
+   CONTACT BLOCK
+========================= */
+
+.contact {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 32px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Title */
+.contact h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Subtitle */
+.contact p {
+  text-align: center;
+  color: #9ca3af;
+  margin-bottom: 24px;
+}
+
+/* Form */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Inputs */
+.contact input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: #fff;
+}
+
+.contact input::placeholder {
+  color: #6b7280;
+}
+
+/* Button */
+.contact button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact button:hover {
+  background: rgba(255,255,255,0.05);
+}
